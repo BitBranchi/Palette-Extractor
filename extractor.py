@@ -17,13 +17,6 @@ def calcLuminance(R, G, B):
     Luminance = 0.2126 * R + 0.7152 * G + 0.0722 * B
     return Luminance
 
-
-def waitForEnterThenExit(face=":D"):
-    print(f"Press any key to exit program... {face}")
-    os.system("pause")
-    exit()
-
-
 while True:
     file_name = str(input("Enter path to your image file: "))
     if os.path.exists(file_name):
@@ -81,8 +74,10 @@ try:
     file_t.close()
 except Exception as e:
     print(f"Unexpected error : {e}")
-    waitForEnterThenExit(">:(")
+    os.system("pause")
+    exit()
 
 image.close()
 print("Your color palette is ready!")
-waitForEnterThenExit()
+os.system("pause")
+exit()
