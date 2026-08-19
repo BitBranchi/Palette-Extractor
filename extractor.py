@@ -12,11 +12,6 @@ def sort_by_luminance(palette):
 
     return sorted(palette, key=lum)
 
-
-def calcLuminance(R, G, B):
-    Luminance = 0.2126 * R + 0.7152 * G + 0.0722 * B
-    return Luminance
-
 while True:
     file_name = str(input("Enter path to your image file: "))
     if os.path.exists(file_name):
