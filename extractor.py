@@ -26,9 +26,11 @@ try:
 except (FileNotFoundError, PIL.UnidentifiedImageError) as e:
     print(f"Failed to load image file with error : {e}")
     os.system("pause")
+    exit()
 except Exception as e:
     print(f"Unexpected error : {e}")
     os.system("pause")
+    exit()
 
 print("Processing started...")
 width, height = image.size
