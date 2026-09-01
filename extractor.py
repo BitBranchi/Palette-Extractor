@@ -44,12 +44,15 @@ if color_count <= 0:
     exit()
 
 # Process Colors array from Pillow to more understandable one :D
+seen = set()
+color = []
 for i in colors:
-    target_color = i[1]
-    temp = []
-    for a in range(3):
-        temp.append(target_color[a])
-    color.append(temp)
+    target_color = tuple(i[1][:3])  # keep only RGB, ignore alpha if present
+    if target_color not in seen:
+        seen.add(target_color)
+        color.append(list(target_color))
+
+color_count = len(color)
 
 # Sort
 color = sort_by_luminance(color)
