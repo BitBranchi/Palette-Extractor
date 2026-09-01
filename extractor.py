@@ -8,7 +8,7 @@ def sort_by_luminance(palette):
     def lum(rgb):
         r, g, b = [x / 255 for x in rgb]
         h, s, v = colorsys.rgb_to_hsv(r, g, b)
-        return h
+        return v
 
     return sorted(palette, key=lum)
 
